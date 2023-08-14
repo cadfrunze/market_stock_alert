@@ -36,8 +36,10 @@ def actualizare_actiune() -> dict:
                     ziua = str(int(ziua) - 1)
                 else:
                     break
-            date_finalizate: dict = {f'{anul}-{luna}-{ziua}': data_json['Time Series (Daily)'][f'{anul}-{luna}-{ziua}']}
+            date_finalizate: dict = {f'{anul}-{luna}-{ziua}': data_json['Time Series (Daily)']\
+                [f'{anul}-{luna}-{ziua}']['4. close']}
             ziua = str(int(ziua) - 1)
-            date_finalizate[f'{anul}-{luna}-{ziua}'] = data_json['Time Series (Daily)'][f'{anul}-{luna}-{ziua}']
+            date_finalizate[f'{anul}-{luna}-{ziua}'] = data_json['Time Series (Daily)']\
+                [f'{anul}-{luna}-{ziua}']['4. close']
             return date_finalizate
 
