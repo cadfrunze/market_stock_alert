@@ -34,9 +34,10 @@ def actualizare_actiune() -> dict:
                     data_json['Time Series (Daily)'][f'{anul}-{luna}-{ziua}']
                 except KeyError:
                     ziua = str(int(ziua) - 1)
-                    print(ziua)
                 else:
                     break
-            break
+            date_finalizate: dict = {f'{anul}-{luna}-{ziua}': data_json['Time Series (Daily)'][f'{anul}-{luna}-{ziua}']}
+            ziua = str(int(ziua) - 1)
+            date_finalizate[f'{anul}-{luna}-{ziua}'] = data_json['Time Series (Daily)'][f'{anul}-{luna}-{ziua}']
+            return date_finalizate
 
-print(actualizare_actiune())
