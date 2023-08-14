@@ -9,7 +9,7 @@ API_STOCK = 'GZVVFO8YXPAC9YLF'
 
 def actualizare_actiune() -> dict:
     """ Functie preluare valori stock exchange"""
-    ziua ,luna , anul = str(datetime.now().day), str(datetime.now().month), str(datetime.now().year)
+    ziua, luna, anul = str(datetime.now().day - 1), str(datetime.now().month), str(datetime.now().year)
     if int(ziua) < 10:
         ziua = '0' + ziua
     if int(luna) < 10:
@@ -36,10 +36,13 @@ def actualizare_actiune() -> dict:
                     ziua = str(int(ziua) - 1)
                 else:
                     break
-            date_finalizate: dict = {f'{anul}-{luna}-{ziua}': data_json['Time Series (Daily)']\
+            if int(ziua) < 10:
+                ziua = '0' + ziua
+            date_finalizate: dict = {f'{anul}-{luna}-{ziua}': data_json['Time Series (Daily)'] \
                 [f'{anul}-{luna}-{ziua}']['4. close']}
             ziua = str(int(ziua) - 1)
-            date_finalizate[f'{anul}-{luna}-{ziua}'] = data_json['Time Series (Daily)']\
+            if int(ziua) < 10:
+                ziua = '0' + ziua
+            date_finalizate[f'{anul}-{luna}-{ziua}'] = data_json['Time Series (Daily)'] \
                 [f'{anul}-{luna}-{ziua}']['4. close']
             return date_finalizate
-
