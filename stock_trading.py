@@ -1,4 +1,4 @@
-# Preluare date API pret actiune (https://www.alphavantage.co/documentation/)
+"""Preluare date API pret actiune (https://www.alphavantage.co/documentation/)"""
 import requests
 from datetime import datetime
 
