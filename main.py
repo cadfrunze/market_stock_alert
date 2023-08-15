@@ -1,8 +1,8 @@
 """Din acest fisier vom rula mecanismul de calculare, afisare a actiunilor (cazul de fata Tesla),
     conform cerintelor, vezi lectia 36. Day 36 - Intermediate+ Stock Trading News Alert Project"""
-from stock_trading import actualizare_actiune
+from stock_trading import preturi
 
-preturi: dict = actualizare_actiune()
+
 suma_lista: list = [float(num) for num in preturi.values()]
 yesterday_price: float = float(round(suma_lista[0], 2))
 alaltaieri_price: float = float(round(suma_lista[-1], 2))

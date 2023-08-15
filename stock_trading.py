@@ -53,3 +53,6 @@ def actualizare_actiune() -> dict:
             date_finalizate[f'{anul}-{luna}-{ziua}'] = data_json['Time Series (Daily)'] \
                 [f'{anul}-{luna}-{ziua}']['4. close']
             return date_finalizate
+
+
+preturi: dict = actualizare_actiune()
