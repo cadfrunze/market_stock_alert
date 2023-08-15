@@ -41,6 +41,13 @@ def actualizare_actiune() -> dict:
             date_finalizate: dict = {f'{anul}-{luna}-{ziua}': data_json['Time Series (Daily)'] \
                 [f'{anul}-{luna}-{ziua}']['4. close']}
             ziua = str(int(ziua) - 1)
+            while True:
+                try:
+                    data_json['Time Series (Daily)'][f'{anul}-{luna}-{ziua}']
+                except KeyError:
+                    ziua = str(int(ziua) - 1)
+                else:
+                    break
             if int(ziua) < 10:
                 ziua = '0' + ziua
             date_finalizate[f'{anul}-{luna}-{ziua}'] = data_json['Time Series (Daily)'] \
