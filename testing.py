@@ -1,8 +1,6 @@
+# cat este 20% din 15
+numarul = 100
+muncitori  = 10
 
-
-test: dict = {
-    'a': 1,
-    'b': 2
-}
-
-print(test['c'])
+rezultat = (muncitori * 100) / numarul
+print(round(rezultat, 2))
