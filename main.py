@@ -1,5 +1,6 @@
 """Din acest fisier vom rula mecanismul de calculare, afisare a actiunilor (cazul de fata Tesla),
     conform cerintelor, vezi lectia 36. Day 36 - Intermediate+ Stock Trading News Alert Project"""
+from news_feed import news
 from stock_trading import preturi
 
 
