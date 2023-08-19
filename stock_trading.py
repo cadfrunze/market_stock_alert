@@ -4,7 +4,7 @@ from datetime import datetime
 
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
-API_STOCK = 'GZVVFO8YXPAC9YLF'
+API_STOCK = 'test'
 
 
 def actualizare_actiune() -> dict:

@@ -5,7 +5,7 @@ from stock_trading import preturi
 
 def afisare_news() -> dict:
     """Functie pt afisare stiri"""
-    stire = NewsApiClient(api_key='bc0e3640ec7e4cf09ebed342fb622a91')
+    stire = NewsApiClient(api_key='test')
     date_liste = [data for data in preturi.keys()]
     articole = stire.get_everything(q='Tesla',
                                     from_param=date_liste[-1],
